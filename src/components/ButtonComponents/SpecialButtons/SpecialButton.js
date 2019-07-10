@@ -4,7 +4,7 @@ import './SpecialButton.scss'
 
 const SpecialButton = props => {
   return (
-    <button className='specialButton' onClick={() => props.inputNumber(props.special)}>
+    <button className='specialButton' onClick={() => props.special === 'C' ? props.clearNumber() : props.inputNumber(props.special)}>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
       {props.special}
     </button>

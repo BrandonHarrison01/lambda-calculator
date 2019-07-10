@@ -20,6 +20,7 @@ const Specials = props => {
             special={special} 
             setSpecial={setSpecial}
             inputNumber={props.inputNumber}
+            clearNumber={props.clearNumber}
           />)}
     </div>
   );
