@@ -19,15 +19,23 @@ function App() {
 
   const [display, setDisplay] = useState(0)
 
+  const inputNumber = num => {
+    setDisplay(display + num)
+  }
+
   return (
     <div className="container">
       <Logo />
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display display={display} />
-        <Specials />
-        <Numbers />
-        <Operators />
+        <div className='buttons'>
+          <div>
+            <Specials inputNumber={inputNumber} />
+            <Numbers inputNumber={inputNumber} />
+          </div>
+          <Operators inputNumber={inputNumber} />
+        </div>
       </div>
     </div>
   );
