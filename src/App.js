@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as math from 'mathjs';
 import "./App.scss";
 // STEP 4 - import the button and display components
 import Display from './components/DisplayComponents/Display'
@@ -27,6 +28,10 @@ function App() {
     setDisplay('')
   }
 
+  const total = () => {
+    setDisplay(math.evaluate(display))
+  }
+
   return (
     <div className="container">
       <Logo />
@@ -38,7 +43,7 @@ function App() {
             <Specials inputNumber={inputNumber} clearNumber={clearNumber} />
             <Numbers inputNumber={inputNumber} />
           </div>
-          <Operators inputNumber={inputNumber} />
+          <Operators inputNumber={inputNumber} total={total} />
         </div>
       </div>
     </div>

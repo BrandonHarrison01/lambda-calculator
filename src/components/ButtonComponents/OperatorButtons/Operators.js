@@ -17,9 +17,10 @@ const Operators = props => {
         {operatorsList.map(operator => 
           <OperatorButton 
             key={operator.value} 
-            operator={operator.char} 
+            operator={operator} 
             setOperator={setOperator}
             inputNumber={props.inputNumber}
+            total={props.total}
           />
         )}
     </div>
